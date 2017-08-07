@@ -1,0 +1,11 @@
+<div class="col-sm-11 col-xs-12 blog-content">
+  <h2 class="text-center"><%= @post.title %></h2>
+  <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
+  <div><%= raw @post.body %></div>
+
+  <button><a href="/posts/<%= @post.id %>/edit">Edit Post</a></button>
+  <form action="/posts/<%= @post.id %>" method="POST">
+  	<input type="hidden" name="_method" value="DELETE">
+  	<input type="submit" value="Delete Post">
+  </form>
+</div>
